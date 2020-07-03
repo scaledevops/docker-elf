@@ -1,3 +1,6 @@
 FROM ubuntu:18.04
 
-CMD while true; do sleep 2 ; echo "{\"app\": 0.2, \"foo\": \"bar\"}"; echo "{\"keydiff\": \"dummy\", \"fooss\": \"bar\"}"; echo " INFO: {\"app\": \"dummy\", \"foo\": \"bar\"}"; echo "Info: Unstructured log"; done
+CMD while true; do sleep 2 ; echo "{\"app\": 0.2, \"foo\": \"bar\"}"; echo "{\"keydiff\": \"dummy\", \"fooss\": \"bar\"}"; echo " INFO: {\"app\": \"dummy\", \"foo\": \"bar\"}"; echo "Info: Unstructured log"; echo "{\"date\": \"06-29 18:29:55\", \"logType\": \"CRITICAL\", \"fileName\": \"Test.py\", \"funcName\": \"run\", \"lineno\": 64, \"Message\": {\"exc_info\": true, \"error_message\": \"(<class 'NameError'>, NameError(\\\"name 'home' is not defined\\\",), <traceback object at 0x10b567c88>)\", \"message\": \"errorhere\"}}"; echo "{\"date\":\"06-29 20:03:43\", \"logType\":\"CRITICAL\", \"fileName\":\"Test.py\", \"funcName\":\"run\", \"lineno\":\"64\", \"Message\":{\"exc_info\": true, \"error_message\": \"(<class 'NameError'>, NameError('name 'home' is not defined',), <traceback object at 0x1014d3c88>)\", \"message\": \"error here\"}}"; done
+
+# "{\"date:06-29 18:29:55, \"logType\":CRITICAL, \"fileName\":Test.py, \"funcName\":run, \"lineno:64, \"Message\":{\"exc_info\": true, \"error_message\": \"(<class 'NameError'>, NameError(\"name 'home' is not defined\",), <traceback object at 0x10b567c88>)\", \"message\": \"error here\"}}"
+# {\"date:06-29 18:29:55, \"logType\":INFO, \"fileName\":Test.py, \"funcName\":run, \"lineno:65, \"Message\":{\"userid\": \"shekhar\", \"message\": \"successfully run\"}}
